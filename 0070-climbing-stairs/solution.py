@@ -1,15 +1,11 @@
-class Solution(object):
- def climbStairs(self, n):
-    prev= 1
-    prev2= 1
-    # Running for loop to count all possible ways
-    for i in range(2, n+1):
-        curr = prev + prev2
-        prev2 = prev
-        prev = curr
-    return prev
-
-
-
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        if n<=2:
+            return n
+        a=1
+        b=2
+        for i in range(3,n+1):
+            a,b=b,a+b
+        return b
 
         
