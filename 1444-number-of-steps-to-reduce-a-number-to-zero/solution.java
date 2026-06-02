@@ -11,6 +11,7 @@ class Solution {
             }
         }
         return c;
+        //return num==0?0:(num%2==0?1:2)+numberOfSteps(num%2==0?num/2:num-1)+1;
         
     }
 }
