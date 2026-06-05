@@ -60,29 +60,51 @@ class Solution {
 
 
 
-      if(s.length()<numRows|| numRows==1)return s;
-      StringBuilder rows[]=new StringBuilder[numRows];
-      int in=0;
-      int st=1;
-      for(int i=0;i<numRows;i++){
-        rows[i]=new StringBuilder();
-      }
-      for(char c:s.toCharArray()){
-        rows[in].append(c);
-        if(in==0){
-            st=1;
-        }
-        else if(in==numRows-1){
-            st=-1;
-        }
-        in+=st;
-      }
-      StringBuilder res=new StringBuilder();
-      for(StringBuilder c:rows){
-        res.append(c);
-      }
-      return res.toString();
+    //   if(s.length()<numRows|| numRows==1)return s;
+    //   StringBuilder rows[]=new StringBuilder[numRows];
+    //   int in=0;
+    //   int st=1;
+    //   for(int i=0;i<numRows;i++){
+    //     rows[i]=new StringBuilder();
+    //   }
+    //   for(char c:s.toCharArray()){
+    //     rows[in].append(c);
+    //     if(in==0){
+    //         st=1;
+    //     }
+    //     else if(in==numRows-1){
+    //         st=-1;
+    //     }
+    //     in+=st;
+    //   }
+    //   StringBuilder res=new StringBuilder();
+    //   for(StringBuilder c:rows){
+    //     res.append(c);
+    //   }
+    //   return res.toString();
 
-        
+        if(s.length()<numRows||numRows==1)return s;
+        StringBuilder[] rows=new StringBuilder[numRows];
+        int in=0;
+        int st=1;
+        for(int i=0;i<numRows;i++){
+            rows[i]=new StringBuilder();
+
+        }
+        for(char c:s.toCharArray()){
+            rows[in].append(c);
+            if(in==0){
+                st=1;
+            }
+            else if(in==numRows-1){
+                st=-1;
+            }
+            in+=st;
+        }
+        StringBuilder res=new StringBuilder();
+        for(StringBuilder c:rows){
+            res.append(c);
+        }
+       return res.toString();
     }
 }
